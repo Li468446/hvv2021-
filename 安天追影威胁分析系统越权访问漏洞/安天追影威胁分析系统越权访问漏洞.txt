@@ -1,0 +1,8 @@
+漏洞描述
+通过修改返回包内容，可以绕过验证，直接登陆系统，可以查看到部分敏感信息
+POC
+1.访问威胁分析系统，抓包一条apiuserislogin的请求，返回包的内容为
+
+{role , login_status false, result ok}
+2.把请求中的 login_status 改为 true
+3.再次访问首页成功进入页面
